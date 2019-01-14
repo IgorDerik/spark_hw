@@ -3,18 +3,19 @@ package app
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
-object Main {
+object Main extends App {
 
-  def main(args: Array[String]): Unit = {
+  val conf: SparkConf = new SparkConf().setMaster("local").setAppName("Spark Homework")
+  val context: SparkContext = new SparkContext(conf)
 
-    val conf: SparkConf = new SparkConf().setMaster("local").setAppName("Spark Homework")
-    val context: SparkContext = new SparkContext(conf)
+  val hotelRDD: RDD[Hotel] = HotelUtils.createHotelRDD(context,"src/main/resources/train.csv")
 
-    val hotelRDD: RDD[Hotel] = HotelUtils.createHotelRDD(context,"src/main/resources/t.csv")
-
-    hotelRDD.collect().foreach(println)
-    println(hotelRDD.count())
+  HotelUtils.get3MostPopularCoupleHotels(hotelRDD).foreach(println)
+  println(HotelUtils.getMostPopularCountryHotelsBookedAndSearchedFromSameCountry(hotelRDD))
+  HotelUtils.get3TopHotelsPeopleWithChildrenInterestedButNotBooked(hotelRDD).foreach(println)
+/*
+  while (true) {
 
   }
-
+*/
 }

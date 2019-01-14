@@ -6,7 +6,7 @@ object Hotel {
     try {
       array(index)
     } catch {
-      case e: Exception => ""
+      case e: Exception => new String
     }
   }
 
@@ -92,35 +92,27 @@ object Hotel {
   }
 }
 
-class Hotel(val date_time: String,
-            val site_name: Int,
-            val posa_continent: Int,
-            val user_location_country: Int,
-            val user_location_region: Int,
-            val user_location_city: Int,
-            val orig_destination_distance: Double,
-            val user_id: Int,
-            val is_mobile: Int,
-            val is_package: Int,
-            val channel: Int,
-            val srch_ci: String,
-            val srch_co: String,
-            val srch_adults_cnt: Int,
-            val srch_children_cnt: Int,
-            val srch_rm_cnt: Int,
-            val srch_destination_id: Int,
-            val srch_destination_type_id: Int,
-            val is_booking: Int,
-            val cnt: Long,
-            val hotel_continent: Int,
-            val hotel_country: Int,
-            val hotel_market: Int,
-            val hotel_cluster: Int)
-  extends Serializable {
-
-  override def toString: String = s"Hotel(date_time=$date_time, site_name=$site_name," +
-    s"user_location_country=$user_location_country, srch_adults_cnt=$srch_adults_cnt," +
-    s"srch_children_cnt=$srch_children_cnt, srch_destination_id=$srch_destination_id," +
-    s"is_booking=$is_booking, hotel_continent=$hotel_continent, hotel_country=$hotel_country," +
-    s"hotel_market=$hotel_market, hotel_cluster=$hotel_cluster)"
-}
+case class Hotel(date_time: String,
+                 site_name: Int,
+                 posa_continent: Int,
+                 user_location_country: Int,
+                 user_location_region: Int,
+                 user_location_city: Int,
+                 orig_destination_distance: Double,
+                 user_id: Int,
+                 is_mobile: Int,
+                 is_package: Int,
+                 channel: Int,
+                 srch_ci: String,
+                 srch_co: String,
+                 srch_adults_cnt: Int,
+                 srch_children_cnt: Int,
+                 srch_rm_cnt: Int,
+                 srch_destination_id: Int,
+                 srch_destination_type_id: Int,
+                 is_booking: Int,
+                 cnt: Long,
+                 hotel_continent: Int,
+                 hotel_country: Int,
+                 hotel_market: Int,
+                 hotel_cluster: Int)
