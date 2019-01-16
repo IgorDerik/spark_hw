@@ -27,37 +27,34 @@ parameter: Path to the csv file
 ```
 createHotelRDD
 ```
-Method to create dataset of Hotels from the csv file
-@param context Spark Context
-@param csvPath Path to the csv file
-@throws InvalidInputException if path to the csv file is not correct
-@return Resilient Distributed Dataset (RDD) of Hotels
+* Method to create dataset of Hotels from the csv file
+* @param context Spark Context
+* @param csvPath Path to the csv file
+* @throws InvalidInputException if path to the csv file is not correct
+* @return Resilient Distributed Dataset (RDD) of Hotels
 
 ```
 get3MostPopularCoupleHotels
 ```
-Method to find top 3 most popular hotels between couples
-@param hotelRDD Resilient Distributed Dataset (RDD) of Hotels to proceed
-@return Array[((continent, country, market), number)]
-        Array of hotels and their number in the dataset.
-        Hotels are treated as composite keys of continent, country and market.
+* Method to find top 3 most popular hotels between couples
+* @param hotelRDD Resilient Distributed Dataset (RDD) of Hotels to proceed
+* @return Array[((continent, country, market), number)]: Array of hotels and their number in the dataset.
+* Hotels are treated as composite keys of continent, country and market.
 
 ```
 getMostPopularCountryHotelsBookedAndSearchedFromSameCountry
 ```
-Method to find the most popular country where hotels are booked and searched from the same country
-@param hotelRDD Resilient Distributed Dataset (RDD) of Hotels to proceed
-@return Array[(country, number)]
-        Array of countries and their number in the dataset.
+* Method to find the most popular country where hotels are booked and searched from the same country
+* @param hotelRDD Resilient Distributed Dataset (RDD) of Hotels to proceed
+* @return Array[(country, number)]: Array of countries and their number in the dataset.
 
 ```
 get3TopHotelsPeopleWithChildrenInterestedButNotBooked
 ```
-Method to find top 3 hotels where people with children are interested but not booked in the end
-@param hotelRDD Resilient Distributed Dataset (RDD) of Hotels to proceed
-@return Array[((continent, country, market), number)]
-        Array of hotels and their number in the dataset.
-        Hotels are treated as composite keys of continent, country and market.
+* Method to find top 3 hotels where people with children are interested but not booked in the end
+* @param hotelRDD Resilient Distributed Dataset (RDD) of Hotels to proceed
+* @return Array[((continent, country, market), number)]: Array of hotels and their number in the dataset.
+* Hotels are treated as composite keys of continent, country and market.
     
 ## Running the tests
 
