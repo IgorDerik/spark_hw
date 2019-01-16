@@ -3,10 +3,11 @@ package app
 object Hotel {
 
   /**
-    *
-    * @param array
-    * @param index
-    * @return
+    * Getting integer value in any case
+    * @param array Array of strings
+    * @param index Array index
+    * @return converted from string integer value
+    *         In case of any Exception method returns 0
     */
   private def getAsInt(array: Array[String], index: Int): Int = {
     try {
@@ -17,9 +18,9 @@ object Hotel {
   }
 
   /**
-    *
-    * @param row
-    * @return
+    * Create hotel object from CSV-like string
+    * @param row String contains comma-separated values
+    * @return Object of Hotel Class
     */
   def createHotel(row: String): Hotel = {
 
