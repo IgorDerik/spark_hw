@@ -5,12 +5,6 @@ import org.apache.spark.rdd.RDD
 import org.junit.{After, Assert, Before, Test}
 
 class HotelUtilsTest {
-/*
-  private val conf: SparkConf = new SparkConf().setMaster("local").setAppName("Spark Homework Testing")
-  private val context: SparkContext = new SparkContext(conf)
-  private val csvPath: String = "src/test/resources/test.csv"
-  private val hotelRDD: RDD[Hotel] = HotelUtils.createHotelRDD(context, csvPath)
-*/
 
   private var conf: SparkConf = _
   private var context: SparkContext = _
@@ -19,14 +13,14 @@ class HotelUtilsTest {
 
   @Before
   def initialize() {
-    conf = new SparkConf().setMaster("local").setAppName("Spark Homework Testing")
+    conf = new SparkConf().setMaster("local").setAppName("Spark Homework Test")
     context = new SparkContext(conf)
     csvPath = "src/test/resources/test.csv"
     hotelRDD = HotelUtils.createHotelRDD(context, csvPath)
   }
 
   @After
-  def destroy() {
+  def destroyContext() {
     context.stop()
   }
 

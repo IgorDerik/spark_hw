@@ -1,5 +1,4 @@
 target/
-project/
 src/main/resources/train.csv
 pom.xml.tag
 pom.xml.releaseBackup
